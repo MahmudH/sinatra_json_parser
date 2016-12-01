@@ -9,7 +9,7 @@ class Bookmark_manager < Sinatra::Base
   end
 
   post '/data' do
-
+    @data = request.body.read
   end
 
   # start the server if ruby file executed directly
