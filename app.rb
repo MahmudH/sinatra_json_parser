@@ -2,14 +2,15 @@ ENV["RACK_ENV"] ||= "development"
 
 require 'sinatra/base'
 
-class Bookmark_manager < Sinatra::Base
+class JsonParser < Sinatra::Base
 
   get '/' do
-    'JSON PARSING APP'
+    @data = $data
+    erb :index
   end
 
   post '/data' do
-    @data = request.body.read
+    $data = request.body.read
   end
 
   # start the server if ruby file executed directly
