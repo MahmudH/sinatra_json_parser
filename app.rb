@@ -15,6 +15,10 @@ class JsonParser < Sinatra::Base
     puts @data
   end
 
+  def greeting
+    'Hello World'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
