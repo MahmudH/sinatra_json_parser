@@ -1,16 +1,18 @@
 ENV["RACK_ENV"] ||= "development"
 
 require 'sinatra/base'
+require 'json'
 
 class JsonParser < Sinatra::Base
 
   get '/' do
-    @data = $data
-    erb :index
+    #@data = $data
+    #erb :index
   end
 
   post '/data' do
-    $data = request.body.read
+    @data = JSON.parse(request.body.read)
+    puts @data
   end
 
   # start the server if ruby file executed directly
