@@ -6,8 +6,7 @@ require 'json'
 class JsonParser < Sinatra::Base
 
   get '/' do
-    #@data = $data
-    #erb :index
+    'hello world'
   end
 
   post '/data' do
